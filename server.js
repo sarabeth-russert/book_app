@@ -15,7 +15,7 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({extended : true}));
 
 app.get('/', renderHomePage);
-app.get('/search'), renderSearchPage);
+//app.get('/search', renderSearchPage);
 
 function renderHomePage(request, response) {
   response.render('pages/index');
