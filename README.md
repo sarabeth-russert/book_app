@@ -15,18 +15,18 @@
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
-09-21-2020 13:02PM - Heroku Hosted Server at https://srda-booklist.herokuapp.com/
+09-21-2020 13:02 - Heroku Hosted Server at https://srda-booklist.herokuapp.com/
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->
 
-Number and name of feature: ________________________________
+Number and name of feature: feature 1 - app loads quickly
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 13:00
 
-Finish time: _____
+Finish time: 14:00
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour
