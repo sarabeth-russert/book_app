@@ -30,3 +30,15 @@ Start time: 13:00
 Finish time: 14:00
 
 Actual time needed to complete: 1 hour
+
+
+
+Number and name of feature: 2 As a user, I want to search the Google Books API so that I can view the results of my search.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 14:45
+
+Finish time: 
+
+Actual time needed to complete: 
