@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Book App New Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="layout.css">
@@ -13,27 +14,31 @@
       <h1>Book App - All your favorite books in one place</h1>
     </header>
     <main>
-      <h2>Search Here for Your Favorite Books and Authors</h2>
-      <form action='/searches' method='post' >
-        <input type="text" name="search" placeholder= "enter a title or author" required>
-        <fieldset>
-          <label for = "title">
-            <span> title </span>
-            <input type=radio name=search value=title required>
-        
-          </label>
-        </fieldset>
+      <section>
+        <h2>Search Here for Your Favorite Books and Authors</h2>
+      </section>
+      <div>
+        <form action='/searches' method='post' >
+          <input type="text" name="search" placeholder= "enter a title or author" required>
+          <fieldset>
+            <label for = "title">
+              <span> title </span>
+              <input type=radio name=search value=title required>
+          
+            </label>
+          </fieldset>
 
-        <fieldset>
-          <label for = "author"></label>
-          <span> author </span>
-            <input type=radio name=search value=author required>
-          </label>
-        </fieldset>
-        <button type="submit">
-          Search the google books api
-        </button>
-      </form>
+          <fieldset>
+            <label for = "author"></label>
+            <span> author </span>
+              <input type=radio name=search value=author required>
+            </label>
+          </fieldset>
+          <button type="submit">
+            Search the google books api
+          </button>
+        </form>
+      </div>
     </main>
   </body>
 </html>

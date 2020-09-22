@@ -25,12 +25,10 @@ function getBookData (request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
   if(searchType === 'title'){ url += `+intitle:${searchQuery}`}
   if(searchType === 'author'){ url += `+inauthor:${searchQuery}`}
-  console.log(request.body)
   superagent.get(url)
     .then(data => {
       const bookArray = data.body.items;
       const finalBookArray = bookArray.map(book => new Book(book.volumeInfo));
-      console.log(finalBookArray);
       response.render('pages/searches/show', {finalBookArray: finalBookArray});
     })
     .catch(() => {
@@ -49,7 +47,7 @@ function renderSearchPage(request,response) {
 }
 
 function handleError (request, response) {
-  response.status(404).send('Page Not Found!');
+  response.status(404).render('error');
 } 
 
 function Book(volumeInfo) {

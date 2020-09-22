@@ -1,23 +1,58 @@
+body {
+  background-color: gray;
+}
+
 header {
   background-color: black;
   color: white;
 
 }
+h1 {
+  font-size: 1.2em;
+}
 
-h2 {
+section {
   background-color: darkgray;
   color: white;
 
 }
 
 
+
+
+
+
 @media only screen and (min-width: 480px) {
   body {
     width: 767px;
+    background-color: gray;
+  }
+  header {
+    background-color: pink;
+    color: white;
+  
   }
 }
 @media only screen and (min-width: 768px) {
   body {
     width: 960px;
+    background-color: gray;
+  }
+  header {
+    background-color: black;
+    color: white;
+  
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  body {
+    width: 1300px;
+    background-color: gray;
+  }
+  header {
+    background-color: pink;
+    color: white;
+  
   }
 }
