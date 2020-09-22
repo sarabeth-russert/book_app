@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book App New Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="modules.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h1>Search Results</h1>
+    </header>
+    <main>
+        <ul>
+          <% finalBookArray.forEach(book => { %>
+            <img src=<%= book.url %> >
+            <h2 class="books"><%= book.title %></h2>
+            <h3 class="books"><%= book.author %></h3>
+            <p class="books"><%= book.description %></p>
+            
+          <% }) %>
+        </ul>
+    </main>
+  </body>
+</html>
