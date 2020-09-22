@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended : true}));
 app.get('/', renderHomePage);
 app.get('/search', renderSearchPage);
 app.post('/searches', getBookData);
+app.get(`*`, handleError);
 
 function getBookData (request, response) {
   const searchQuery = request.body.search[0];
@@ -47,6 +48,9 @@ function renderSearchPage(request,response) {
   response.render('pages/searches/new.ejs');
 }
 
+function handleError (request, response) {
+  response.status(404).send('Page Not Found!');
+} 
 
 function Book(volumeInfo) {
   this.url = volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail: `https://i.imgur.com/J5LVHEL.jpg`;
