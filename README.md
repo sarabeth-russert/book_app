@@ -81,3 +81,15 @@ Finish time: 19:30
 
 Actual time needed to complete: 1 hour 30min
 
+
+
+
+Number and name of feature: lab 12 feature 1 Saved books displayed on homepage
+
+Estimate of time needed to complete: 2 hour
+
+Start time: 14:30
+
+Finish time: 
+
+Actual time needed to complete: 
