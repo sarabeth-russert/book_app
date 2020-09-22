@@ -1,10 +1,189 @@
+body {
+  display: grid;
+  grid-template-rows: 75px, 1fr;
+  grid-template-columns: 1fr;
+}
+
+header {
+  height: 75px;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  grid-row: 2;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.books {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+img {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+  margin-top: 30px;
+}
+
 @media only screen and (min-width: 480px) {
   body {
     width: 767px;
+    display: grid;
+    grid-template-rows: 75px, 1fr;
+    grid-template-columns: 1fr;
+  }
+  header {
+    height: 75px;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main {
+    grid-row: 2;
+  }
+  
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
   }
 }
+
 @media only screen and (min-width: 768px) {
   body {
     width: 960px;
+    display: grid;
+    grid-template-rows: 75px, 1fr;
+    grid-template-columns: 1fr;
+  }
+  header {
+    height: 75px;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main {
+    grid-row: 2;
+  }
+  
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  body {
+    width: 1300px;
+    display: grid;
+    grid-template-rows: 75px, 1fr;
+    grid-template-columns: 1fr;
+  }
+  header {
+    height: 75px;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  main {
+    grid-row: 2;
+  }
+  
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+  
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
+  
+  .books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  img {
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: 30px;
   }
 }
