@@ -18,6 +18,7 @@
 09-21-2020 13:02 - Heroku Hosted Server at https://srda-booklist.herokuapp.com/
 09-21-2020 17:45 - Books searchable and book list rendering
 09-21-2020 19:33 - Css complete for day 1
+09-22-2020 18:33 - Features through card three on the trello complete
 
 ## Credits and Collaborations
 Sara and Dom worked on this together, we got help from Skyler, christopher and kevin, and flexbox tips and tricks - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -84,12 +85,35 @@ Actual time needed to complete: 1 hour 30min
 
 
 
-Number and name of feature: lab 12 feature 1 Saved books displayed on homepage
+Number and name of feature: lab 12 feature 1 
 
 Estimate of time needed to complete: 2 hour
 
 Start time: 14:30
 
-Finish time: 
+Finish time: 16:14
 
-Actual time needed to complete: 
+Actual time needed to complete: 1 hour 45
+
+
+
+Number and name of feature: lab 12 feature 2 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 16:14
+
+Finish time: 17:15
+
+Actual time needed to complete: 1 hour
+
+
+Number and name of feature: lab 12 feature 3 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 17:50
+
+Finish time: 18:33
+
+Actual time needed to complete: 43 min
