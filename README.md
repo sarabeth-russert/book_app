@@ -22,6 +22,7 @@
 
 ## Credits and Collaborations
 Sara and Dom worked on this together, we got help from Skyler, christopher and kevin, and flexbox tips and tricks - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+menu image - https://game-icons.net/1x1/delapouite/hamburger-menu.html
 -->
 
 Number and name of feature: feature 1 - app loads quickly
@@ -117,3 +118,26 @@ Start time: 17:50
 Finish time: 18:33
 
 Actual time needed to complete: 43 min
+
+
+Number and name of feature: lab 12 feature 4
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 21:00
+
+Finish time: 22:30
+
+Actual time needed to complete: 1.5
+
+
+
+Number and name of feature: lab 12 feature 5
+
+Estimate of time needed to complete: 1 hours
+
+Start time: 22:30
+
+Finish time: 23:45
+
+Actual time needed to complete: 1.25
