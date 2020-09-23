@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Book App New Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <%- include( '../../layout/head.ejs' ) %>
   </head>
   <body>
     <header>
@@ -16,7 +10,7 @@
     <main>
         <ul>
           <% finalBookArray.forEach(book => { %>
-            <img src=<%= book.image_url %> >
+            <img class="book_image" src=<%= book.image_url %> >
             <h2 class="books"><%= book.title %></h2>
             <h3 class="books"><%= book.author %></h3>
             <p class="books"><%= book.description %></p>
@@ -24,5 +18,8 @@
           <% }) %>
         </ul>
     </main>
+    <footer>
+      <%- include( '../../layout/footer.ejs' ) %>
+    </footer>
   </body>
 </html>
