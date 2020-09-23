@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Book App New Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <%- include( '../../layout/head.ejs' ) %>
   </head>
   <body>
     <header>
-      <h1>Book App - All your favorite books in one place</h1>
+      <h1>Book App</h1>
+      <%- include( '../../layout/header.ejs' ) %>
     </header>
     <main>
       <div>
@@ -34,11 +29,14 @@
               <input type=radio name=search value=author required>
             </label>
           </fieldset>
-          <button type="submit">
-            Search the google books api
-          </button>
+            <button id="search_button" type="submit">
+              Search the google books api
+            </button>
         </form>
       </div>
     </main>
+    <footer>
+      <%- include( '../../layout/footer.ejs' ) %>
+    </footer>
   </body>
 </html>
