@@ -3,10 +3,10 @@
   <head>
     <title>Book App New Search</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="layout.css">
-    <link rel="stylesheet" href="modules.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
@@ -16,11 +16,20 @@
     <main>
         <ul>
           <% finalBookArray.forEach(book => { %>
-            <img src=<%= book.url %> >
+            <img src=<%= book.image_url %> >
             <h2 class="books"><%= book.title %></h2>
             <h3 class="books"><%= book.author %></h3>
             <p class="books"><%= book.description %></p>
-            
+            <form  id="create-form" action="/books" method="post">
+              <fieldset>
+                <input type="hidden" name="author" value="<%= book.author %>">
+                <input type="hidden" name="title" value="<%= book.title %>">
+                <input type="hidden" name="isbn" value="<%= book.isbn %>">
+                <input type="hidden" name="image_url" value="<%= book.image_url %>">
+                <input type="hidden" name="description" value="<%= book.description %>">
+                <button type="submit">Add to Favorites</button>
+              </fieldset>
+            </form>
           <% }) %>
         </ul>
     </main>
