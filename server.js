@@ -18,6 +18,8 @@ app.use(express.urlencoded({extended : true}));
 app.get('/', renderHomePage);
 app.get('/search', renderSearchPage);
 app.post('/searches', getBookData);
+app.get('/books/:id', singleBookDetails);
+app.post('/books', saveBooks);
 app.get(`*`, handleError);
 
 function getBookData (request, response) {
@@ -31,14 +33,10 @@ function getBookData (request, response) {
       const bookArray = data.body.items;
       const finalBookArray = bookArray.map(book => new Book(book.volumeInfo));
       response.render('pages/searches/show', {finalBookArray: finalBookArray});
-      let SQL = `INSERT INTO books (author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5);`;
-      let safeValues = [finalBookArray[0].author, finalBookArray[0].title, finalBookArray[0].isbn, finalBookArray[0].url, finalBookArray[0].description];
-      client.query(SQL, safeValues)
-        .then(data => console.log(data + 'was stored'));
-  
+      console.log('the book should have a url', finalBookArray[0]);
     })
     .catch(() => {
-      response.status(500).send('Something went wrong with your location with your superagent location');
+      response.status(500).send('something went wrong with your superagent for showing api book data');
       console.log(url);
     })
 
@@ -49,7 +47,6 @@ function renderHomePage(request, response) {
   client.query(sql)
     .then(result => {
       let allBooks = result.rows;
-      console.log(allBooks);
       response.status(200).render('pages/index.ejs', {bookList : allBooks});
     })
 }
@@ -62,8 +59,36 @@ function handleError (request, response) {
   response.status(404).render('error');
 } 
 
+function singleBookDetails(request, response) {
+  const id = request.params.id;
+	console.log('single book details: ', id);
+	const sql = 'SELECT * FROM books WHERE id=$1;';
+	const safeValues = [id];
+	client.query(sql, safeValues).then((results) => {
+		console.log(results.rows[0]);
+		const myChosenBook = results.rows[0];
+		response.render('pages/books/detail', { myChosenBook: myChosenBook });
+	});
+}
+
+function saveBooks(request, response) {
+  const {author, title, isbn, image_url, description} = request.body;
+  console.log('in save books, this is the request body');
+  console.log(request.body);
+  const sql = 'INSERT INTO books (author, title, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) RETURNING id;';
+
+  const safeValues = [author, title, isbn, image_url, description];
+  client.query(sql, safeValues)
+    .then(results => {
+      const id = results.rows[0].id;
+      console.log('results from sql', id);
+      response.redirect(`books/${results.rows[0].id}`);
+    })
+}
+
+
 function Book(volumeInfo) {
-  this.url = volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail.replace(/^http:\/\//i, 'https://'): `https://i.imgur.com/J5LVHEL.jpg`;
+  this.image_url = volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail.replace(/^http:\/\//i, 'https://'): `https://i.imgur.com/J5LVHEL.jpg`;
   this.title = volumeInfo.title ? volumeInfo.title: ` Title Unavailable!`;
   this.author = volumeInfo.authors ? volumeInfo.authors[0]: `Author Unavailable!`;
   this.description = volumeInfo.description ? volumeInfo.description: `Description Not Found!?`;

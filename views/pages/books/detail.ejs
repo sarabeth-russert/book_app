@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book App - details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+  </head>
+  <body>
+    <header>
+      <h1>Book App - All your favorite books in one place</h1>
+    </header>
+    <main>
+      <div><a href="/search">search for books</a></div>
+      <div><h3>Book Details</h3></div>
+      <section>
+        <img src=<%= myChosenBook.image_url %>>
+        <h2 class="books"><%= myChosenBook.title %></h2>
+        <h3 class="books"><%= myChosenBook.author %></h3>
+        <p class="books"><%= myChosenBook.description %></p>
+        <p class="books"><%= myChosenBook.isbn %></p>
+      </section>
+    </main>
+  </body>
+</html>
