@@ -17,11 +17,22 @@
           <h3 class="books"><%= myChosenBook.author %></h3>
           <p class="books"><%= myChosenBook.description %></p>
           <p class="books"><%= myChosenBook.isbn %></p>
+          <form action="/update/<%= myChosenBook.id %>?_method=PUT" method="post"></form>
+          <div>
+            <!-- this button has a listener that reveals the form -->
+            <button class="UD_button" type="submit" id="update">Update Details</button>
+            <!-- This button deletes the book -->
+            <form action='/books/<%= myChosenBook.id %>?_method=DELETE' method="post"><button class="UD_button">Delete Book</button></form> 
+          </div>
+          <%- include( 'edit.ejs' ) %>
         </article>
+        <article><%- include( 'edit.ejs' ) %></article>
       </ul>
     </main>
     <footer>
       <%- include( '../../layout/footer.ejs' ) %>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../../js/app.js"></script>
   </body>
 </html>

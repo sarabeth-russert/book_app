@@ -1,1 +1,28 @@
 <!-- partial template for the form to edit book details -->
+
+<form id="UD_ID" action='/books/<%= myChosenBook.id %>?_method=PUT' method="post">
+  <span>Update Details</span>
+  <fieldset>
+    <label for = "image_url"></label>
+    <span> Image URL </span>
+      <input type=input name=image_url value="<%= myChosenBook.image_url %>">
+    </label>
+    <label for = "title"></label>
+    <span> Title </span>
+    <input type=input name=title value="<%= myChosenBook.title %>">
+    </label>
+    <label for = "author"></label>
+    <span> Author </span>
+      <input type=input name=author value="<%= myChosenBook.author %>">
+    </label>
+    <label for = "description"></label>
+    <span> Description </span>
+    <input type=text name=description value="<%= myChosenBook.description %>">
+    </label>
+    <label for = "isbn"></label>
+    <span> ISBN </span>
+      <input type=input name=isbn value="<%= myChosenBook.isbn %>">
+    </label>
+  </fieldset>
+  <div><button id="update_button" type="submit">Submit Changes</button></div>
+</form>
