@@ -1,24 +1,26 @@
 # Project Name
 
-**Author**: Your Name Goes Here
+**Author**: Sara and Dom
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
+A virtual book shelf where you can store your favorite books and add personalize your notes about them
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Get books from google books api
+store results in database 
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+express server connects to front end via ejs views and through  public folder. Goes out to query google books api and retrieves data stored in database table. Pulls from database to populate app. Users can add, update, and delete db entries.
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+
 
 09-21-2020 13:02 - Heroku Hosted Server at https://srda-booklist.herokuapp.com/
 09-21-2020 17:45 - Books searchable and book list rendering
 09-21-2020 19:33 - Css complete for day 1
 09-22-2020 18:33 - Features through card three on the trello complete
+09-23-2020 17:30 - Update and delete book features live, css is complete
 
 ## Credits and Collaborations
 Sara and Dom worked on this together, we got help from Skyler, christopher and kevin, and flexbox tips and tricks - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -132,12 +134,24 @@ Actual time needed to complete: 1.5
 
 
 
-Number and name of feature: lab 12 feature 5
+Number and name of feature: lab 13 feature 1
 
-Estimate of time needed to complete: 1 hours
+Estimate of time needed to complete: 2
 
-Start time: 22:30
+Start time: 15:20
 
-Finish time: 23:45
+Finish time: 17:20
 
-Actual time needed to complete: 1.25
+Actual time needed to complete: 2 hours
+
+
+
+Number and name of feature: lab 13 feature 2
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 13:50
+
+Finish time: 15:15
+
+Actual time needed to complete: 1.5 hours
