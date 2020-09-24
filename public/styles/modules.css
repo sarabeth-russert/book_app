@@ -18,6 +18,10 @@ section {
 
 }
 
+#UD_ID {
+  display: none;
+}
+
 .drop_img {
   width: 50px;
 }
@@ -59,6 +63,20 @@ a {
   background-color: black;
   color: white;
   width: 200px;
+  height: 40px;
+  border-radius: 10px
+}
+
+#update_div {
+  background-color: rgb(190, 190, 190);
+  width: 300px;
+
+}
+
+#update_button {
+  background-color: black;
+  color: white;
+  width: 250px;
   height: 40px;
   border-radius: 10px
 }

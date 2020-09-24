@@ -6,6 +6,8 @@ require('ejs');
 const express = require('express');
 const superagent = require('superagent');
 const pg = require('pg');
+const methodOverride = require('method-override');
+
 
 const app = express();
 let port = process.env.PORT;
@@ -14,12 +16,15 @@ const client = new pg.Client(process.env.DATABASE_URL);
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.urlencoded({extended : true}));
+app.use(methodOverride('_method'));
 
 app.get('/', renderHomePage);
 app.get('/search', renderSearchPage);
 app.post('/searches', getBookData);
 app.get('/books/:id', singleBookDetails);
 app.post('/books', saveBooks);
+app.put('/books/:id', updateBook);
+app.delete('/books/:id', deleteBook);
 app.get(`*`, handleError);
 
 function getBookData (request, response) {
@@ -86,6 +91,25 @@ function saveBooks(request, response) {
     })
 }
 
+function updateBook(request, response) {
+  const id = request.params.id;
+  console.log(request.body);
+  const {author, title, isbn, image_url, description} = request.body;
+
+  let sql = 'UPDATE books SET author=$1, title=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6;';
+  let safeValues = [author, title, isbn, image_url, description, id];
+  client.query(sql, safeValues);
+  response.status(200).redirect(`/books/${id}`);
+}
+
+function deleteBook(request, response) {
+  const id = request.params.id;
+  let sql = 'DELETE FROM books WHERE id=$1;';
+  let safeValues = [id];
+  client.query(sql, safeValues);
+  response.status(200).redirect('../');
+}
+
 
 function Book(volumeInfo) {
   this.image_url = volumeInfo.imageLinks ? volumeInfo.imageLinks.smallThumbnail.replace(/^http:\/\//i, 'https://'): `https://i.imgur.com/J5LVHEL.jpg`;
@@ -94,9 +118,6 @@ function Book(volumeInfo) {
   this.description = volumeInfo.description ? volumeInfo.description: `Description Not Found!?`;
   this.isbn = volumeInfo.industryIdentifiers[0].identifier ? volumeInfo.industryIdentifiers[0].identifier: `No number available`;
 }
-
-
-
 
 client.connect()
   .then(() => {
